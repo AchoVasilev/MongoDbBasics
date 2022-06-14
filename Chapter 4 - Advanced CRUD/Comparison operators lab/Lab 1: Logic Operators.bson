@@ -1,0 +1,4 @@
+db.zips.find({ "pop": { "$gte": 5000, "$lte": 1000000 }}).count()
+
+db.zips.find({ "$nor": [ { "pop": { "$lt":5000 } },
+             { "pop": { "$gt": 1000000 } } ] } ).count()
